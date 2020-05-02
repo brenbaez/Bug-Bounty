@@ -43,7 +43,7 @@ public class LogServiceTest {
     public void addLogs() {
         for (String event : events)
             svc.addLog(event, user);
-        assertEquals(events.length, svc.getLogs().size());
+        assertEquals(events.length, svc.getLogs().size()); // TODO: 1/5/2020   se agregan dos veces en el addLog
     }
 
     /**
@@ -54,7 +54,7 @@ public class LogServiceTest {
      *                              para evitar poner try-catch.
      */
     @Test
-    public void hasAllLogsConcurrent() throws InterruptedException {
+    public void hasAllLogsConcurrent() throws InterruptedException {// TODO: 1/5/2020   se agregan dos veces en el addLog
         int half = events.length / 2;
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < half; i++) {
@@ -81,7 +81,7 @@ public class LogServiceTest {
     }
 
     @Test
-    public void getLogsByUser() {
+    public void getLogsByUser() { // TODO: 1/5/2020 redefinir el equals de User por campo name
         User usertest = new User("admin");
         User usertest2 = new User("admin");
         User usertest3 = new User("test");

@@ -68,7 +68,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testSortedByName() {
+    public void testSortedByName() { // TODO: 1/5/2020 estaba retornando por id 
         List<User> listOfUsersAdded = userService.getUsers();
         List<User> sorted = Arrays.asList(users);
 
@@ -79,7 +79,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void testAddNullUser() {
+    public void testAddNullUser() { // TODO: 1/5/2020 lanza null exception, atrapamos la exception y lanzamos illegal
         try {
             userService.addUser(null);
         } catch (IllegalArgumentException e) {
@@ -92,7 +92,7 @@ public class UserServiceTest {
      * correspondientes.
      */
     @Test
-    public void testLoginUser() {
+    public void testLoginUser() { // TODO: 1/5/2020 error en la asignacion lastID = lastID++; 
         User a = userService.login("A");
         User b = userService.login("B");
         User c = userService.login("C");
@@ -104,8 +104,8 @@ public class UserServiceTest {
     }
 
     @Test()
-    public void testAddUsersAndClear() throws Exception {
-        for (int i = 0; i < 100; i++) {
+    public void testAddUsersAndClear() throws Exception { // TODO: 1/5/2020 vaciar la lista de logs 
+        for (int i = 0; i < 1000; i++) {
             for (int j = 0; j < 5000; j++) {
                 userService.addUser(new User("Test", i * j));
             }

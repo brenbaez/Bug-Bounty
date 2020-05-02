@@ -69,7 +69,7 @@ public class TodoServiceTest {
      * Agrega un ToDo
      */
     @Test
-    public void testCreateTodo() {
+    public void testCreateTodo() { // TODO: 1/5/2020 faltaba setear el content 
         String testContent = "Test Content";
         todoService.createNewTodo(testContent);
         List<ToDo> todoList = todoService.getTodoList();
@@ -85,7 +85,8 @@ public class TodoServiceTest {
      * @throws InterruptedException
      */
     @Test
-    public void testTimerDelete() throws InterruptedException {
+    public void testTimerDelete() throws InterruptedException { // TODO: 1/5/2020 diferencia de tiempo mayor a 5 debe ser eliminada
+                                                            //debemos cambiar el comparador menor por mayor
         todoService.addTODO(buildFakeTodo());
         Thread.sleep(2 * 1000);
         todoService.addTODO(buildFakeTodo());

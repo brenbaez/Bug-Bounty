@@ -26,7 +26,7 @@ public class CurrentUserTest {
 	 * El servicio debería retornar un usuario por defecto.
 	 */
 	@Test
-	public void testGetsDefaultUser() {
+	public void testGetsDefaultUser() { // TODO: 1/5/2020 estaba al reves el if 
 		User user = currentUser.getCurrent();
 		assertNotNull(user);
 	}
@@ -37,7 +37,9 @@ public class CurrentUserTest {
 	 * @throws InterruptedException
 	 */
 	@Test
-	public void testCurrentConcurrent() throws InterruptedException {
+	public void testCurrentConcurrent() throws InterruptedException { // TODO: 1/5/2020 ambos threads caian en el if
+																		// current == null y tenian diferentes direcciones
+																		//de memoria
 		for (int i = 0; i < 10000; i++) {
 			// En este caso creamos una instancia separada para crear uno nuevo
 			// en cada iteración
